@@ -1,0 +1,10 @@
+FROM ubuntu:22.04
+
+WORKDIR /godot-jolt
+
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install git cmake python3 g++ -y
+
+COPY . .
+
+CMD [ "/bin/bash", "./build.sh" ]

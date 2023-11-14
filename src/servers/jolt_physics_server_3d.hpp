@@ -77,6 +77,8 @@ public:
 	};
 
 private:
+	double fixed_delta = 0.0;
+
 	static void _bind_methods();
 
 public:
@@ -599,21 +601,25 @@ public:
 
 	void _free_rid(const RID& p_rid) override;
 
-	void set_active(bool active);
+	// void set_active(bool active);
 
 	void _set_active(bool p_active) override;
 
 	void _init() override;
 
-	godot::PackedByteArray save_state();
+	// godot::PackedByteArray save_state();
 
-	void restore_state(godot::PackedByteArray state_recorder_string);
+	// void restore_state(godot::PackedByteArray state_recorder_string);
+
+	void set_fixed_delta(double fixed_delta);
 
 	void step(double delta);
 
 	void _step(double p_step) override;
 
 	void _sync() override { }
+
+	// void flush_queries();
 
 	void _flush_queries() override;
 
